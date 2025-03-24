@@ -25,6 +25,8 @@ services:
     image: ghcr.io/wg-easy/wg-easy
     container_name: wg-easy
     restart: unless-stopped
+    depends_on:
+      - adguardhome
     volumes:
       - ./wg-easy/:/etc/wireguard/
     ports:
@@ -32,6 +34,8 @@ services:
       - "51821:51821/tcp"
     environment:
       - WG_HOST=raspberry.local
+      - WG_DEFAULT_ADDRESS=192.168.100.x
+      - WG_DEFAULT_DNS=192.168.0.30
     cap_add:
       - NET_ADMIN
       - NET_RAW

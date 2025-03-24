@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install -y podman podman-compose
+
 if [ ! -d "conf" ]; then
   mkdir conf
 fi
