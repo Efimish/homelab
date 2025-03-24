@@ -1,0 +1,12 @@
+UseBridges 1
+
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy managed
+ClientTransportPlugin webtunnel exec ????? managed
+
+Bridge webtunnel [ipv6]:443 SOMETING url=https://example.com ver=0.0.1
+Bridge webtunnel [ipv6]:443 SOMETING url=https://example.com ver=0.0.1
+Bridge webtunnel [ipv6]:443 SOMETING url=https://example.com ver=0.0.1
+
+obfs4 ipv4:port SOMETHING cert=SOMETHING iat-mode=0
+obfs4 ipv4:port SOMETHING cert=SOMETHING iat-mode=1
+obfs4 ipv4:port SOMETHING cert=SOMETHING iat-mode=2

@@ -1,11 +1,11 @@
 FROM alpine
 
 RUN apk -U upgrade && \
-    apk -v add tor && \
+    apk -v add tor lyrebird && \
     chmod 700 /var/lib/tor && \
     rm -rf /var/cache/apk/*
 
 USER tor
-EXPOSE 8853/udp 9150/tcp
+EXPOSE 9150/tcp
 
 CMD ["/usr/bin/tor", "-f", "/etc/tor/torrc"]
