@@ -2,3 +2,4 @@ conf
 work
 wg-easy
 .DS_Store
+.env

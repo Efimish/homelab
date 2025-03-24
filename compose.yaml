@@ -1,25 +1,22 @@
 services:
   adguardhome:
-    image: adguard/adguardhome
+    image: docker.io/adguard/adguardhome
     container_name: adguardhome
     restart: unless-stopped
     volumes:
       - ./work/:/opt/adguardhome/work/
       - ./conf/:/opt/adguardhome/conf/
     ports:
+      # Plain DNS
       - "53:53/tcp"
       - "53:53/udp"
-      - "67:67/udp"
-      # - "68:68/udp"
+      # Admin panel
       - "80:80/tcp"
       - "443:443/tcp"
       - "443:443/udp"
       - "3000:3000/tcp"
+      # DNS-over-TLS
       - "853:853/tcp"
-      - "853:853/udp"
-      - "5443:5443/tcp"
-      - "5443:5443/udp"
-      - "6060:6060/tcp"
 
   wg-easy:
     image: ghcr.io/wg-easy/wg-easy
@@ -33,7 +30,8 @@ services:
       - "51820:51820/udp"
       - "51821:51821/tcp"
     environment:
-      - WG_HOST=raspberry.local
+      - PASSWORD=${PASSWORD}
+      - WG_HOST=home.efima.ru
       - WG_DEFAULT_ADDRESS=192.168.100.x
       - WG_DEFAULT_DNS=192.168.0.30
     cap_add:
