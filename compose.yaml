@@ -30,10 +30,11 @@ services:
       - "51820:51820/udp"
       - "51821:51821/tcp"
     environment:
-      - PASSWORD=${PASSWORD}
       - WG_HOST=home.efima.ru
+      - PASSWORD=${PASSWORD}
       - WG_DEFAULT_ADDRESS=192.168.100.x
       - WG_DEFAULT_DNS=192.168.0.30
+      - WG_ALLOWED_IPS=192.168.0.0/24
     cap_add:
       - NET_ADMIN
       - NET_RAW
