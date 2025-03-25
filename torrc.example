@@ -1,7 +1,14 @@
 UseBridges 1
 
-ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy managed
-ClientTransportPlugin webtunnel exec ????? managed
+# Debian:
+# ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy managed
+# ClientTransportPlugin webtunnel exec ????? managed
+
+# Alpine:
+ClientTransportPlugin obfs4 exec /usr/bin/lyrebird
+# ClientTransportPlugin webtunnel exec ?????
+
+HTTPTunnelPort 9080
 
 Bridge webtunnel [ipv6]:443 SOMETING url=https://example.com ver=0.0.1
 Bridge webtunnel [ipv6]:443 SOMETING url=https://example.com ver=0.0.1

@@ -53,3 +53,5 @@ services:
     ports:
       # SOCKS5 proxy
       - "9050:9050/tcp"
+      # HTTP proxy
+      - "9080:9080/tcp"
