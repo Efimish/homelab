@@ -5,6 +5,9 @@ RUN apk -U upgrade && \
     chmod 700 /var/lib/tor && \
     rm -rf /var/cache/apk/*
 
+HEALTHCHECK --timeout=10s --start-period=60s \
+  CMD curl -fIL --socks5-hostname localhost:9050 'https://www.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion/' || exit 1
+
 USER tor
 EXPOSE 9050/tcp
 
