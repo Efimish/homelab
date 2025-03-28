@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if podman compose 2>&1 > /dev/null; then
+if command -v "podman compose" 2>&1 > /dev/null; then
   CMD="podman compose"
-elif podman-compose 2>&1 > /dev/null; then
+elif command -v "podman-compose" 2>&1 > /dev/null; then
   CMD="podman-compose"
 else
   echo "Podman Compose is not installed. Please install Podman Compose first."
