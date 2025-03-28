@@ -4,8 +4,8 @@ services:
     container_name: adguardhome
     restart: unless-stopped
     volumes:
-      - ./work/:/opt/adguardhome/work/
-      - ./conf/:/opt/adguardhome/conf/
+      - ./data/adguard-config/:/opt/adguardhome/conf/
+      - ./data/adguard-data/:/opt/adguardhome/work/
     ports:
       # Plain DNS
       - "53:53/tcp"
@@ -38,7 +38,7 @@ services:
       - adguardhome
       - tor
     volumes:
-      - ./wg-easy/:/etc/wireguard/
+      - ./data/wg-easy/:/etc/wireguard/
     ports:
       # WireGuard VPN port
       - "51820:51820/udp"

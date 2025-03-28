@@ -1,6 +1,4 @@
-conf
-work
-wg-easy
-torrc
 .DS_Store
 .env
+torrc
+data
