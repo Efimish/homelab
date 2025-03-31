@@ -1,3 +1,3 @@
 # Homelab
 
-AdGuard Home + WireGuard (wg-easy) + Tor
+AdGuard Home + WireGuard (wg-easy) + Tor + Filebrowser

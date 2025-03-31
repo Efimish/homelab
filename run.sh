@@ -21,7 +21,7 @@ if [ ! -f "torrc" ]; then
   exit 1
 fi
 
-mkdir -p data/{adguard-config,adguard-data,wg-easy}
+mkdir -p data/{adguard-config,adguard-data,wg-easy,filebrowser}
 
 $CMD down
 $CMD build
