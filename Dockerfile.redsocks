@@ -1,0 +1,9 @@
+FROM alpine:edge
+
+RUN apk -U upgrade && \
+    apk -v add redsocks && \
+    rm -rf /var/cache/apk/*
+
+EXPOSE 12345/tcp
+
+CMD ["/usr/bin/redsocks", "-c", "/etc/redsocks/redsocks.conf"]
