@@ -60,7 +60,7 @@ services:
       - "51821:51821/tcp"
     environment:
       - WG_HOST=home.efima.ru
-      - PASSWORD=${PASSWORD}
+      - PASSWORD_HASH=${PASSWORD_HASH}
       - WG_DEFAULT_ADDRESS=192.168.100.x
       - WG_DEFAULT_DNS=192.168.0.30
     cap_add:
